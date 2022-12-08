@@ -1,0 +1,38 @@
+{
+  "name": "multi-assert",
+  "version": "0.0.1",
+  "description": "This module allows developers and testers to use multiple assertions in the same test and get feedback on all of the ones that would cause the test to fail, not just the first failed assertion encountered.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "example": "mocha examples/**/*.spec.js",
+    "test": "mocha test/**/*.spec.js",
+    "build": "mkdir -p build && cp -npr src index.js package.json README.md build/",
+    "test:build": "npm run build && cp -r test build/ && cd build && npm test && rm -rf test"
+  },
+  "keywords": [
+    "chai",
+    "expect",
+    "assertions",
+    "testing",
+    "async testing",
+    "multiple",
+    "multiple assertions"
+  ],
+  "bugs": {
+    "url": "https://github.com/jamesmortensen/multi-assert/issues"
+  },
+  "homepage": "https://github.com/jamesmortensen/multi-assert/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesmortensen/multi-assert.git"
+  },
+  "author": "James Mortensen",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
+}
