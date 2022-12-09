@@ -40,8 +40,8 @@ Wrap your existing assertions inside arrow functions, inside an array passed int
 ```javascript
     it('should expect 2 to be 2 and 3 to be 3', () => {
         multiAssert([
-            expect(2).to.equal(2),
-            expect(3).to.equal(3)
+            () => expect(2).to.equal(2),
+            () => expect(3).to.equal(3)
         ]);
     });
 ```
