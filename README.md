@@ -177,7 +177,7 @@ Here is the output when using async mode:
 
 ### Banking Example - Withdraw $100
 
-In this example, we group assertions by whether or not they validate the test case is ready to be executed or whether or not the test case has executed successfully and given us the expected output conditions.
+In this example, we arrange assertions into two separate groups. In the first group, the assertions determine whether the test case is ready to be executed or whether some precondition is not satisfied. In the last group, the assertions validate whether or not the test case has executed successfully and given us the expected output conditions.
 
 Note that the first set of assertions could also be added to a beforeEach hook if other tests rely on the system being in the same state of having an initial $110 balance with a max withdrawal amount of $2000.
 
@@ -233,11 +233,11 @@ Don't put all of your assertions in a single assertMulti if you intend for the t
 
 The typical structure of a test case is outlined by the 3 A's, Arrange, Act, Assert.
 
-- Arrange: In this section, we setup the necessary state of the application in order to run the test case steps. For instance, we may need to populate an entity object with specific data, or we may need to confirm that a certain setting is first enabled _before_ executing the part of the code we want to test. If we're testing the withdraw logic for a bank account and whether or not $100 can be withdrawn succcessfully, we first need to make sure our test account has at least $100 in it; otherwise, we cannot execute the test.
+- **Arrange:** In this section, we setup the necessary state of the application in order to run the test case steps. For instance, we may need to populate an entity object with specific data, or we may need to confirm that a certain setting is first enabled _before_ executing the part of the code we want to test. If we're testing the withdraw logic for a bank account and whether or not $100 can be withdrawn succcessfully, we first need to make sure our test account has at least $100 in it; otherwise, we cannot execute the test.
 
-- Act: In this part of the test case, we execute the code that we want to test. For example, we might execute a method such as `withdrawAmount(100)`. This method changes the state of the system and may also return a value. We validate the state of the system in the next section.
+- **Act:** In this part of the test case, we execute the code that we want to test. For example, we might execute a method such as `withdrawAmount(100)`. This method changes the state of the system and may also return a value. We validate the state of the system in the next section.
 
-- Assert: In this section, we validate that the operation performed in the "Act" part of the test case has put the system in the desired state. For example, `withdrawAmount(100)` should have returned `true` and `getAccountBalance()` should return 10, assuming we asserted in the "Arrange" section that the original balance was $110.
+- **Assert:** In this section, we validate that the operation performed in the "Act" part of the test case has put the system in the desired state. For example, `withdrawAmount(100)` should have returned `true` and `getAccountBalance()` should return 10, assuming we asserted in the "Arrange" section that the original balance was $110.
 
 Sometimes we use assertions to validate that the "arrange" part of arrange, act, assert is setup correctly, and we may use an assertion to first validate the state of the system prior to running the test. If an assertion which is intended to validate that a test is _ready_ instead tells us that a test is _not_ ready, we probably do not want to execute the test, and multi-assert may get in the way of failing fast. 
 
@@ -357,6 +357,7 @@ If you run into any issues, please report them in the issue tracker, ideally wit
 
 ### Unit Tests
 
+You may run the unit tests for this module by cloning the repository and running `npm test` in the root of the repository.
 
 ## License
 
