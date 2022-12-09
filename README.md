@@ -52,7 +52,7 @@ See the examples for more in-depth usage.
 
 NOTE: You can run many examples with `npm run example` by cloning this repository. See the `examples` folder.
 
-For example, below is a test with 3 assertions. The first one will fail. However, since we're using `multiAssert`, results show that the first and third assertions fail.
+For example, below is a test with 3 assertions. The first one will fail. However, since we're using `multiAssert`, the test runner continues executing assertions, and final results show that the first and third assertions fail.
 
 ```javascript
 const { expect } = require('chai');
