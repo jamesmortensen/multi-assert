@@ -1,6 +1,6 @@
 {
   "name": "multi-assert",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "This module allows developers and testers to use multiple assertions in the same test and get feedback on all of the ones that would cause the test to fail, not just the first failed assertion encountered.",
   "main": "index.js",
   "directories": {
