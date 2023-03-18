@@ -303,6 +303,10 @@ multi-assert is built with Chai's assertions in mind, used in combination with M
 
 If you're using Jasmine, you don't need this library. Jasmine already executes all of the assertions before reporting the errors.
 
+### Playwright
+
+If you're using Playwright, you don't need this library. Playwright has `expect.soft`, which uses soft assertions instead of hard assertions.
+
 ### WebdriverIO
 
 This example uses a combination of Chai assertions with WebdriverIO's own expect assertion library, using multiAssertAsync:
